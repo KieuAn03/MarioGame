@@ -11,6 +11,31 @@ clound.txt
 # type	x	y	extra_settings per object type
 # type: 0 = Mario , 1 = Brick, 2 = Goomba, 3 = Koopas, 4 = coin
 # See OBJECT_TYPE constants in AssetIDs.h
+#Brick
+1	1952	178
+1	1968	178
+1	1984	178
+1	2000	178
+1	2016	178
+1	2032	178
+1	2048	178
+1	2096	178
+1	2112	178
+
+1	1968	162
+1	1984	162
+1	2000	162
+1	2016	162
+1	2032	162
+1	2096	162
+
+
+1	1984	146
+1	2000	146
+1	2016	146
+1	2032	146
+
+
 #Plant
 6	161	178
 6	177	178
@@ -36,7 +61,7 @@ clound.txt
 
 
 # MARIO
-0	160	10
+0	1900	10
 
 #Goomba
 2	180	120
