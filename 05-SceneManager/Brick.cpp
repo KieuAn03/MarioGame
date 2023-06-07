@@ -15,3 +15,22 @@ void CBrick::GetBoundingBox(float &l, float &t, float &r, float &b)
 	b = t + BRICK_BBOX_HEIGHT;
 }
 
+void CBackBrick::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BACKBRICK)->Render(x, y);
+	//RenderBoundingBox();
+}
+
+void CBackBrick::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - BACKBRICK_BBOX_WIDTH / 2;
+	t = y - BACKBRICK_BBOX_HEIGHT / 2;
+	r = l + BACKBRICK_BBOX_WIDTH;
+	b = t + BACKBRICK_BBOX_HEIGHT;
+}
+
+int CBackBrick::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}

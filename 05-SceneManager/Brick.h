@@ -10,6 +10,11 @@
 #define BRICK_BBOX_HEIGHT 16
 
 
+#define ID_ANI_BACKBRICK 2000
+#define BACKBRICK_WIDTH 16
+#define BACKBRICK_BBOX_WIDTH 16
+#define BACKBRICK_BBOX_HEIGHT 16
+
 
 class CBrick : public CGameObject {
 public:
@@ -17,5 +22,16 @@ public:
 	void Render();
 	void Update(DWORD dt) {}
 	void GetBoundingBox(float& l, float& t, float& r, float& b);
+};
+
+
+class CBackBrick : public CGameObject {
+public:
+	CBackBrick(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+
 };
 
