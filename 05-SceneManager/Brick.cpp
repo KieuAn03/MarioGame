@@ -34,3 +34,23 @@ int CBackBrick::IsDirectionColliable(float nx, float ny)
 {
 	return 0;
 }
+
+void CSand::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_SAND)->Render(x, y);
+}
+
+void CSand::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - SAND_BBOX_WIDTH / 2;
+	t = y - SAND_BBOX_HEIGHT / 2;
+	r = l + SAND_BBOX_WIDTH;
+	b = t + SAND_BBOX_HEIGHT;
+
+}
+
+int CSand::IsDirectionColliable(float nx, float ny)
+{
+	return 1;
+}

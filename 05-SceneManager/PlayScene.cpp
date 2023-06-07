@@ -120,6 +120,7 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_BRICK: obj = new CBrick(x,y); break;
 	case OBJECT_TYPE_COIN: obj = new CCoin(x, y); break;
 	case OBJECT_TYPE_BACKBRICK: obj = new CBackBrick(x, y); break;
+	case OBJECT_TYPE_SAND: obj = new CSand(x, y); break;
 	case OBJECT_TYPE_PLATFORM:
 	{
 
