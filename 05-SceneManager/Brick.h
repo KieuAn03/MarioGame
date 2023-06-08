@@ -20,6 +20,11 @@
 #define SAND_BBOX_WIDTH 16
 #define SAND_BBOX_HEIGHT 16
 
+#define ID_ANI_CLOUNDSMILE 4100
+#define CLOUNDSMILE_WIDTH 16
+#define CLOUNDSMILE_BBOX_WIDTH 16
+#define CLOUNDSMILE_BBOX_HEIGHT 16
+
 
 
 class CBrick : public CGameObject {
@@ -28,6 +33,16 @@ public:
 	void Render();
 	void Update(DWORD dt) {}
 	void GetBoundingBox(float& l, float& t, float& r, float& b);
+};
+
+class CCloundSmile : public CGameObject {
+public:
+	CCloundSmile(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+
 };
 
 

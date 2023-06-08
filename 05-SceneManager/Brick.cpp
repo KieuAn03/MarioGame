@@ -54,3 +54,22 @@ int CSand::IsDirectionColliable(float nx, float ny)
 {
 	return 1;
 }
+
+void CCloundSmile::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_CLOUNDSMILE)->Render(x, y);
+}
+
+void CCloundSmile::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y -	CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CCloundSmile::IsDirectionColliable(float nx, float ny)
+{
+	return 1;
+}
