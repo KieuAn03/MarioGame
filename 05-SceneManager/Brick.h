@@ -27,7 +27,10 @@
 
 #define ID_ANI_MYSBOX 4200
 
-
+#define ID_ANI_BOTPIPL 4301
+#define ID_ANI_BOTPIPR 4302
+#define ID_ANI_TOPPIPL 4303
+#define ID_ANI_TOPPIPR 4304
 class CBrick : public CGameObject {
 public:
 	CBrick(float x, float y) : CGameObject(x, y) {}
@@ -78,3 +81,39 @@ public:
 
 };
 
+class CBotPipL : public CGameObject {
+public:
+	CBotPipL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+
+};
+class CBotPipR : public CGameObject {
+public:
+	CBotPipR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+
+};
+class CTopPipL : public CGameObject {
+public:
+	CTopPipL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+
+};
+class CTopPipR : public CGameObject {
+public:
+	CTopPipR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+
+};

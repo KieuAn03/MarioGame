@@ -1,4 +1,4 @@
-#include "Platform.h"
+ #include "Platform.h"
 
 #include "Sprite.h"
 #include "Sprites.h"
