@@ -31,6 +31,14 @@
 #define ID_ANI_BOTPIPR 4302
 #define ID_ANI_TOPPIPL 4303
 #define ID_ANI_TOPPIPR 4304
+
+#define ID_ANI_TOPCLOUNDL 4400
+#define ID_ANI_TOPCLOUNDM 4401
+#define ID_ANI_TOPCLOUNDR 4402
+#define ID_ANI_BOTCLOUNDL 4403
+#define ID_ANI_BOTCLOUNDM 4404
+#define ID_ANI_BOTCLOUNDR 4405
+
 class CBrick : public CGameObject {
 public:
 	CBrick(float x, float y) : CGameObject(x, y) {}
@@ -116,4 +124,62 @@ public:
 	void GetBoundingBox(float& l, float& t, float& r, float& b);
 	int IsDirectionColliable(float nx, float ny);
 
+};
+
+class CTopCloundR : public CGameObject {
+public:
+	CTopCloundR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CTopCloundM : public CGameObject {
+public:
+	CTopCloundM(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CTopCloundL : public CGameObject {
+public:
+	CTopCloundL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CBotCloundR : public CGameObject {
+public:
+	CBotCloundR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotCloundM : public CGameObject {
+public:
+	CBotCloundM(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CBotCloundL : public CGameObject {
+public:
+	CBotCloundL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
 };

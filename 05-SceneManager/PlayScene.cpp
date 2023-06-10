@@ -131,6 +131,16 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_BOTPIPR: obj = new CBotPipR(x, y); break;
 
 
+	case OBJECT_TYPE_TOPCLOUNDL:obj = new CTopCloundL(x, y); break;
+	case OBJECT_TYPE_TOPCLOUNDM:obj = new CTopCloundM(x, y); break;
+	case OBJECT_TYPE_TOPCLOUNDR:obj = new CTopCloundR(x, y); break;
+	case OBJECT_TYPE_BOTCLOUNDL:obj = new CBotCloundL(x, y); break;
+	case OBJECT_TYPE_BOTCLOUNDM:obj = new CBotCloundM(x, y); break;
+	case OBJECT_TYPE_BOTCLOUNDR:obj = new CBotCloundR(x, y); break;
+
+
+
+
 	case OBJECT_TYPE_PLATFORM:
 	{
 
