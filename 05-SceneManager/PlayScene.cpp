@@ -139,6 +139,46 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_BOTCLOUNDR:obj = new CBotCloundR(x, y); break;
 
 
+	case OBJECT_TYPE_TOPSHAPE0L: obj = new CTopShapeL(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE0M: obj = new CTopShapeM(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE0R: obj = new CTopShapeR(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE0L: obj = new CMidShapeL(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE0M: obj = new CMidShapeM(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE0R: obj = new CMidShapeR(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE0L: obj = new CBotShapeL(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE0M: obj = new CBotShapeM(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE0R: obj = new CBotShapeR(x, y); break;
+
+
+	case OBJECT_TYPE_TOPSHAPE1L: obj = new CTopShape1L(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE1M: obj = new CTopShape1M(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE1R: obj = new CTopShape1R(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE1L: obj = new CMidShape1L(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE1M: obj = new CMidShape1M(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE1R: obj = new CMidShape1R(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE1L: obj = new CBotShape1L(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE1M: obj = new CBotShape1M(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE1R: obj = new CBotShape1R(x, y); break;
+
+	case OBJECT_TYPE_TOPSHAPE2L: obj = new CTopShape2L(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE2M: obj = new CTopShape2M(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE2R: obj = new CTopShape2R(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE2L: obj = new CMidShape2L(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE2M: obj = new CMidShape2M(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE2R: obj = new CMidShape2R(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE2L: obj = new CBotShape2L(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE2M: obj = new CBotShape2M(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE2R: obj = new CBotShape2R(x, y); break;
+
+	case OBJECT_TYPE_TOPSHAPE3L: obj = new CTopShape3L(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE3M: obj = new CTopShape3M(x, y); break;
+	case OBJECT_TYPE_TOPSHAPE3R: obj = new CTopShape3R(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE3L: obj = new CMidShape3L(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE3M: obj = new CMidShape3M(x, y); break;
+	case OBJECT_TYPE_MIDSHAPE3R: obj = new CMidShape3R(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE3L: obj = new CBotShape3L(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE3M: obj = new CBotShape3M(x, y); break;
+	case OBJECT_TYPE_BOTSHAPE3R: obj = new CBotShape3R(x, y); break;
 
 
 	case OBJECT_TYPE_PLATFORM:

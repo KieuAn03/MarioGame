@@ -39,6 +39,48 @@
 #define ID_ANI_BOTCLOUNDM 4404
 #define ID_ANI_BOTCLOUNDR 4405
 
+
+#define ID_ANI_TOPSHAPE0L 4660
+#define ID_ANI_TOPSHAPE0M 4661
+#define ID_ANI_TOPSHAPE0R 4662
+#define ID_ANI_MIDSHAPE0L 4663
+#define ID_ANI_MIDSHAPE0M 4664
+#define ID_ANI_MIDSHAPE0R 4665
+#define ID_ANI_BOTSHAPE0L 4666
+#define ID_ANI_BOTSHAPE0M 4667
+#define ID_ANI_BOTSHAPE0R 4668
+
+
+#define ID_ANI_TOPSHAPE1L 4670
+#define ID_ANI_TOPSHAPE1M 4671
+#define ID_ANI_TOPSHAPE1R 4672
+#define ID_ANI_MIDSHAPE1L 4673
+#define ID_ANI_MIDSHAPE1M 4674
+#define ID_ANI_MIDSHAPE1R 4675
+#define ID_ANI_BOTSHAPE1L 4676
+#define ID_ANI_BOTSHAPE1M 4677
+#define ID_ANI_BOTSHAPE1R 4678
+
+#define ID_ANI_TOPSHAPE2L 4680
+#define ID_ANI_TOPSHAPE2M 4681
+#define ID_ANI_TOPSHAPE2R 4682
+#define ID_ANI_MIDSHAPE2L 4683
+#define ID_ANI_MIDSHAPE2M 4684
+#define ID_ANI_MIDSHAPE2R 4685
+#define ID_ANI_BOTSHAPE2L 4686
+#define ID_ANI_BOTSHAPE2M 4687
+#define ID_ANI_BOTSHAPE2R 4688
+
+#define ID_ANI_TOPSHAPE3L 4690
+#define ID_ANI_TOPSHAPE3M 4691
+#define ID_ANI_TOPSHAPE3R 4692
+#define ID_ANI_MIDSHAPE3L 4693
+#define ID_ANI_MIDSHAPE3M 4694
+#define ID_ANI_MIDSHAPE3R 4695
+#define ID_ANI_BOTSHAPE3L 4696
+#define ID_ANI_BOTSHAPE3M 4697
+#define ID_ANI_BOTSHAPE3R 4698
+
 class CBrick : public CGameObject {
 public:
 	CBrick(float x, float y) : CGameObject(x, y) {}
@@ -178,6 +220,352 @@ public:
 class CBotCloundL : public CGameObject {
 public:
 	CBotCloundL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CTopShapeL : public CGameObject {
+public:
+	CTopShapeL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CTopShapeM : public CGameObject {
+public:
+	CTopShapeM(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CTopShapeR : public CGameObject {
+public:
+	CTopShapeR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt);
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShapeL : public CGameObject {
+public:
+	CMidShapeL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShapeM : public CGameObject {
+public:
+	CMidShapeM(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShapeR : public CGameObject {
+public:
+	CMidShapeR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CBotShapeL : public CGameObject {
+public:
+	CBotShapeL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShapeM : public CGameObject {
+public:
+	CBotShapeM(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShapeR : public CGameObject {
+public:
+	CBotShapeR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+
+
+
+// 01
+
+class CTopShape1L : public CGameObject {
+public:
+	CTopShape1L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CTopShape1M : public CGameObject {
+public:
+	CTopShape1M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CTopShape1R : public CGameObject {
+public:
+	CTopShape1R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt);
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape1L : public CGameObject {
+public:
+	CMidShape1L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape1M : public CGameObject {
+public:
+	CMidShape1M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape1R : public CGameObject {
+public:
+	CMidShape1R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CBotShape1L : public CGameObject {
+public:
+	CBotShape1L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShape1M : public CGameObject {
+public:
+	CBotShape1M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShape1R : public CGameObject {
+public:
+	CBotShape1R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+
+
+///02
+
+
+class CTopShape2L : public CGameObject {
+public:
+	CTopShape2L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CTopShape2M : public CGameObject {
+public:
+	CTopShape2M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CTopShape2R : public CGameObject {
+public:
+	CTopShape2R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt);
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape2L : public CGameObject {
+public:
+	CMidShape2L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape2M : public CGameObject {
+public:
+	CMidShape2M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape2R : public CGameObject {
+public:
+	CMidShape2R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CBotShape2L : public CGameObject {
+public:
+	CBotShape2L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShape2M : public CGameObject {
+public:
+	CBotShape2M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShape2R : public CGameObject {
+public:
+	CBotShape2R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+
+//03
+
+
+class CTopShape3L : public CGameObject {
+public:
+	CTopShape3L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CTopShape3M : public CGameObject {
+public:
+	CTopShape3M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CTopShape3R : public CGameObject {
+public:
+	CTopShape3R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt);
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape3L : public CGameObject {
+public:
+	CMidShape3L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape3M : public CGameObject {
+public:
+	CMidShape3M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CMidShape3R : public CGameObject {
+public:
+	CMidShape3R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+
+class CBotShape3L : public CGameObject {
+public:
+	CBotShape3L(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShape3M : public CGameObject {
+public:
+	CBotShape3M(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CBotShape3R : public CGameObject {
+public:
+	CBotShape3R(float x, float y) : CGameObject(x, y) {}
 	void Render();
 	void Update(DWORD dt) {}
 	void GetBoundingBox(float& l, float& t, float& r, float& b);

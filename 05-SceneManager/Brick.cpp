@@ -282,3 +282,708 @@ int CBotCloundL::IsDirectionColliable(float nx, float ny)
 {
 	return 0;
 }
+
+void CTopShapeL::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE0L)->Render(x, y);
+}
+
+void CTopShapeL::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShapeL::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShapeM::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE0M)->Render(x, y);
+}
+
+void CTopShapeM::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShapeM::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShapeR::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE0R)->Render(x, y);
+}
+
+
+void CTopShapeR::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShapeR::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CMidShapeL::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE0L)->Render(x, y);
+}
+
+void CMidShapeL::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShapeL::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShapeM::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE0M)->Render(x, y);
+}
+
+void CMidShapeM::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShapeM::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShapeR::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE0R)->Render(x, y);
+}
+
+void CMidShapeR::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShapeR::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShapeL::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE0L)->Render(x, y);
+}
+
+void CBotShapeL::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShapeL::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShapeM::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE0M)->Render(x, y);
+}
+
+void CBotShapeM::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShapeM::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShapeR::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE0R)->Render(x, y);
+}
+
+void CBotShapeR::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShapeR::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShape3R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE3R)->Render(x, y);
+}
+
+void CBotShape3R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape3R::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShape3M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE3M)->Render(x, y);
+}
+
+void CBotShape3M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape3M::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShape3L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE3L)->Render(x, y);
+}
+
+void CBotShape3L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape3L::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape3R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE3R)->Render(x, y);
+}
+
+void CMidShape3R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape3R::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape3M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE3M)->Render(x, y);
+}
+
+void CMidShape3M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape3M::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape3L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE3L)->Render(x, y);
+}
+
+void CMidShape3L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape3L::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CTopShape3R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE3R)->Render(x, y);
+}
+
+
+
+void CTopShape3R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape3R::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShape3M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE3M)->Render(x, y);
+}
+
+void CTopShape3M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape3M::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShape3L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE3L)->Render(x, y);
+}
+
+void CTopShape3L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape3L::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CBotShape2R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE2R)->Render(x, y);
+}
+
+void CBotShape2R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape2R::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShape2M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE2M)->Render(x, y);
+}
+
+void CBotShape2M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape2M::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShape2L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE2L)->Render(x, y);
+}
+
+void CBotShape2L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape2L::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape2R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE2R)->Render(x, y);
+}
+
+void CMidShape2R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape2R::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape2M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE2M)->Render(x, y);
+}
+
+void CMidShape2M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape2M::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape2L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE2L)->Render(x, y);
+}
+
+void CMidShape2L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape2L::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CTopShape2R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE2R)->Render(x, y);
+}
+
+
+
+void CTopShape2R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape2R::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShape2M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE2M)->Render(x, y);
+}
+
+void CTopShape2M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape2M::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShape2L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE2L)->Render(x, y);
+}
+
+void CTopShape2L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape2L::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CBotShape1R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE1R)->Render(x, y);
+}
+
+void CBotShape1R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape1R::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShape1M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE1M)->Render(x, y);
+}
+
+void CBotShape1M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape1M::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CBotShape1L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTSHAPE1L)->Render(x, y);
+}
+
+void CBotShape1L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CBotShape1L::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape1R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE1R)->Render(x, y);
+}
+
+void CMidShape1R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape1R::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape1M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE1M)->Render(x, y);
+}
+
+void CMidShape1M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape1M::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CMidShape1L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDSHAPE1L)->Render(x, y);
+}
+
+void CMidShape1L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CMidShape1L::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CTopShape1R::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE1R)->Render(x, y);
+}
+
+void CTopShape1R::Update(DWORD dt)
+{
+}
+
+void CTopShape1R::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape1R::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShape1M::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE1M)->Render(x, y);
+}
+
+void CTopShape1M::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape1M::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
+
+void CTopShape1L::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPSHAPE1L)->Render(x, y);
+}
+
+void CTopShape1L::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CTopShape1L::IsDirectionColliable(float nx, float ny)
+{
+	if (nx == 0 && ny == -1) return 1;
+	else return 0;
+}
