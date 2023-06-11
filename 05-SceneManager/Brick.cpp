@@ -987,3 +987,136 @@ int CTopShape1L::IsDirectionColliable(float nx, float ny)
 	if (nx == 0 && ny == -1) return 1;
 	else return 0;
 }
+
+void CGrassTOPL::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPGRASSL)->Render(x, y);
+}
+
+void CGrassTOPL::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CGrassTOPL::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CGrassTOPR::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_TOPGRASSR)->Render(x, y);
+}
+
+void CGrassTOPR::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CGrassTOPR::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CGrassBOTL::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTGRASSL)->Render(x, y);
+}
+
+void CGrassBOTL::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CGrassBOTL::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CGrassBOTR::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTGRASSR)->Render(x, y);
+}
+
+void CGrassBOTR::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CGrassBOTR::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CGrassBOTLa::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTGRASSLa)->Render(x, y);
+}
+
+void CGrassBOTLa::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CGrassBOTLa::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CGrassBOTLb::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_BOTGRASSRa)->Render(x, y);
+}
+
+void CGrassBOTLb::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CGrassBOTLb::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}
+
+void CGrassMid::Render()
+{
+	CAnimations* animations = CAnimations::GetInstance();
+	animations->Get(ID_ANI_MIDGRASS)->Render(x, y);
+}
+
+void CGrassMid::GetBoundingBox(float& l, float& t, float& r, float& b)
+{
+	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
+	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
+	r = l + CLOUNDSMILE_BBOX_WIDTH;
+	b = t + CLOUNDSMILE_BBOX_HEIGHT;
+}
+
+int CGrassMid::IsDirectionColliable(float nx, float ny)
+{
+	return 0;
+}

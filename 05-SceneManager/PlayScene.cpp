@@ -180,6 +180,18 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_BOTSHAPE3M: obj = new CBotShape3M(x, y); break;
 	case OBJECT_TYPE_BOTSHAPE3R: obj = new CBotShape3R(x, y); break;
 
+	case OBJECT_TYPE_TOPGRASSL: obj = new CGrassTOPL(x, y); break;
+	case OBJECT_TYPE_TOPGRASSR: obj = new CGrassTOPR(x, y); break;
+	case OBJECT_TYPE_BOTGRASSL: obj = new CGrassBOTL(x, y); break;
+	case OBJECT_TYPE_BOTGRASSR: obj = new CGrassBOTR(x, y); break;
+	case OBJECT_TYPE_BOTGRASSLa: obj = new CGrassBOTLa(x, y); break;
+	case OBJECT_TYPE_BOTGRASSRa: obj = new CGrassBOTLb(x, y); break;
+	case OBJECT_TYPE_MIDGRASS: obj = new CGrassMid(x, y); break;
+
+
+
+
+
 
 	case OBJECT_TYPE_PLATFORM:
 	{

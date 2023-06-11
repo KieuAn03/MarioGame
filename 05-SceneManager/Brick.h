@@ -81,6 +81,14 @@
 #define ID_ANI_BOTSHAPE3M 4697
 #define ID_ANI_BOTSHAPE3R 4698
 
+
+#define ID_ANI_TOPGRASSL 4710
+#define ID_ANI_TOPGRASSR 4711
+#define ID_ANI_BOTGRASSL 4712
+#define ID_ANI_BOTGRASSR 4713
+#define ID_ANI_BOTGRASSLa 4714
+#define ID_ANI_BOTGRASSRa 4715
+#define ID_ANI_MIDGRASS 4716
 class CBrick : public CGameObject {
 public:
 	CBrick(float x, float y) : CGameObject(x, y) {}
@@ -566,6 +574,64 @@ public:
 class CBotShape3R : public CGameObject {
 public:
 	CBotShape3R(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CGrassTOPL : public CGameObject {
+public:
+	CGrassTOPL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CGrassTOPR : public CGameObject {
+public:
+	CGrassTOPR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+
+class CGrassBOTL : public CGameObject {
+public:
+	CGrassBOTL(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CGrassBOTR : public CGameObject {
+public:
+	CGrassBOTR(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CGrassBOTLa : public CGameObject {
+public:
+	CGrassBOTLa(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CGrassBOTLb : public CGameObject {
+public:
+	CGrassBOTLb(float x, float y) : CGameObject(x, y) {}
+	void Render();
+	void Update(DWORD dt) {}
+	void GetBoundingBox(float& l, float& t, float& r, float& b);
+	int IsDirectionColliable(float nx, float ny);
+};
+class CGrassMid : public CGameObject {
+public:
+	CGrassMid(float x, float y) : CGameObject(x, y) {}
 	void Render();
 	void Update(DWORD dt) {}
 	void GetBoundingBox(float& l, float& t, float& r, float& b);
