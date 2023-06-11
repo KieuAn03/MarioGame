@@ -5,6 +5,7 @@
 #include "Game.h"
 
 #include "Goomba.h"
+#include "KoopaTroopa.h"
 #include "Coin.h"
 #include "Portal.h"
 

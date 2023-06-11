@@ -92,3 +92,4 @@ void CGoomba::SetState(int state)
 			break;
 	}
 }
+
