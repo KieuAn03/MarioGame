@@ -12,8 +12,14 @@ void KoopaTroopa::GetBoundingBox(float& left, float& top, float& right, float& b
 	else
 	{
 		left = x - TROOPA_BBOX_WIDTH / 2;
-		if (head != nullptr) {
+		if (isRevie == true) {
+			
 			y = head->GetOy();
+			this->ay = TROOPA_GRAVITY;
+			this->head->ay = TROOPA_GRAVITY;
+			vx = -TROOPA_WALKING_SPEED;
+			this->head->Setvx(-TROOPA_WALKING_SPEED);
+			isRevie = false;
 		}
 		top = y - TROOPA_BBOX_HEIGHT / 2;
 		right = left + TROOPA_BBOX_WIDTH;
@@ -120,20 +126,18 @@ void KoopaTroopa::SetState(int state)
 	switch (state)
 	{
 	case TROOPA_STATE_DIE:
-		beforedeadx = x;
-		beforedeady = y;
+		isRevie = true;
 		die_start = GetTickCount64();
 		y += (TROOPA_BBOX_HEIGHT - TROOPA_BBOX_HEIGHT_DIE) / 2;
 		vx = 0;
 		vy = 0;
 		ay = 0;
-		
+		head->ax = 0;
+		head->ay = 0;
+		head->Setvx(0);
 		break;
 	case TROOPA_STATE_WALKING:
 		vx = -TROOPA_WALKING_SPEED;
-		break;
-	case 9999:
-		y = this->head->GetOy();
 		break;
 	}
 	

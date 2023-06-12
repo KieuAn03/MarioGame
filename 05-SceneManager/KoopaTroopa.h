@@ -20,8 +20,7 @@
 class KoopaHead : public CGameObject
 {
 protected:
-	float ax;
-	float ay;
+	
 	
 	ULONGLONG die_start;
 
@@ -36,6 +35,8 @@ protected:
 	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
 
 public:
+	float ax;
+	float ay;
 	virtual void Render();
 	KoopaHead(float x, float y);
 	virtual void SetState(int state);
@@ -47,8 +48,7 @@ public:
 class KoopaTroopa : public CGameObject
 {
 protected:
-	float beforedeadx=-99999;
-	float beforedeady;
+	int isRevie = 0;
 	float beforedeadvx;
 	int Direction;
 	float ax;
