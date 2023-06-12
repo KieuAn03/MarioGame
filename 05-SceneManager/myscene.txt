@@ -6,6 +6,7 @@ cloud.txt
 brick.txt
 goomba.txt
 clound.txt
+Troopa.txt
 #
 [OBJECTS]
 # type	x	y	extra_settings per object type
@@ -260,10 +261,8 @@ clound.txt
 
 
 #Goomba
-2	180	120
-2	160	120
-2	140	120
 
+#troopa
 #pip
 202	353	178
 203	369	178
@@ -583,8 +582,10 @@ clound.txt
 337	1328	178
 338	1360	178
 
+#troopa
+10	587	-90
 # MARIO
-0	10	-90
+0	600	-30
 
 #Platform
 5	0	194	16	16	39	80001	80002	80003
