@@ -19,3 +19,4 @@ height	240
 20	textures\misc.png
 30	textures\background.png
 40	textures\animal.png
+50	textures\animalfliped.png

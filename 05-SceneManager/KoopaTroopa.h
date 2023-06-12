@@ -7,21 +7,22 @@
 
 #define TROOPA_BBOX_WIDTH 16
 #define TROOPA_BBOX_HEIGHT 24
-#define TROOPA_BBOX_HEIGHT_DIE 7
+#define TROOPA_BBOX_HEIGHT_DIE 16
 
-#define TROOPA_DIE_TIMEOUT 6000
+#define TROOPA_DIE_TIMEOUT 600
 
 #define TROOPA_STATE_WALKING 100
 #define TROOPA_STATE_DIE 200
 
-#define ID_ANI_TROOPA_WALKING 5201
+#define ID_ANI_TROOPA_WALKINGL 5201
 #define ID_ANI_TROOPA_DIE 5202
+#define ID_ANI_TROOPA_WALKINGR 5203
 class KoopaHead : public CGameObject
 {
 protected:
 	float ax;
 	float ay;
-
+	
 	ULONGLONG die_start;
 
 	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
@@ -46,6 +47,10 @@ public:
 class KoopaTroopa : public CGameObject
 {
 protected:
+	float beforedeadx=-99999;
+	float beforedeady;
+	float beforedeadvx;
+	int Direction;
 	float ax;
 	float ay;
 	KoopaHead *head;
@@ -62,6 +67,7 @@ protected:
 	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
 
 public:
+	
 	KoopaTroopa(float x, float y);
 	virtual void SetState(int state);
 };
