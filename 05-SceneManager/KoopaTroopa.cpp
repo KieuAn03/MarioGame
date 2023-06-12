@@ -9,18 +9,16 @@ void KoopaTroopa::GetBoundingBox(float& left, float& top, float& right, float& b
 		right = left + TROOPA_BBOX_WIDTH;
 		bottom = top + TROOPA_BBOX_HEIGHT_DIE;
 	}
+	else if (state == TROOPA_STATE_REVIE)
+	{
+		left = x - TROOPA_BBOX_WIDTH / 2;
+		top = y - TROOPA_BBOX_HEIGHT_DIE / 2;
+		right = left + TROOPA_BBOX_WIDTH;
+		bottom = top + TROOPA_BBOX_HEIGHT_DIE;
+	}
 	else
 	{
 		left = x - TROOPA_BBOX_WIDTH / 2;
-		if (isRevie == true) {
-			
-			y = head->GetOy();
-			this->ay = TROOPA_GRAVITY;
-			this->head->ay = TROOPA_GRAVITY;
-			vx = -TROOPA_WALKING_SPEED;
-			this->head->Setvx(-TROOPA_WALKING_SPEED);
-			isRevie = false;
-		}
 		top = y - TROOPA_BBOX_HEIGHT / 2;
 		right = left + TROOPA_BBOX_WIDTH;
 		bottom = top + TROOPA_BBOX_HEIGHT;
@@ -45,9 +43,35 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 
 		}
 	}
+	
 	if ((state == TROOPA_STATE_DIE) && (GetTickCount64() - die_start > TROOPA_DIE_TIMEOUT))
 	{
-		state = TROOPA_STATE_WALKING;
+		
+			
+		revie_start = GetTickCount64();
+		vx = 0.06f;
+		state = TROOPA_STATE_REVIE;
+
+	}
+
+	if ((state == TROOPA_STATE_REVIE))
+	{
+		vx = -vx;
+		OutputDebugStringW(L"ENTER REVIE STATE.");
+
+
+		if ((GetTickCount64() - revie_start >= TROOPA_REVIE_TIMEOUT)) {
+
+			OutputDebugStringW(L"LEAVE REVIE STATE.");
+			y = head->GetOy();
+			this->ay = TROOPA_GRAVITY;
+			this->head->ay = TROOPA_GRAVITY;
+			vx = -TROOPA_WALKING_SPEED;
+			this->head->Setvx(-TROOPA_WALKING_SPEED);
+			die_start = -1;
+			revie_start = -1;
+			state = TROOPA_STATE_WALKING;
+		}
 
 	}
 	CGameObject::Update(dt, coObjects);
@@ -69,6 +93,9 @@ void KoopaTroopa::Render()
 	{
 		aniId = ID_ANI_TROOPA_DIE;
 	}
+	if (state == TROOPA_STATE_REVIE) {
+		aniId = ID_ANI_TROOPA_DIE;
+	}
 	CAnimations::GetInstance()->Get(aniId)->Render(x, y);
 	RenderBoundingBox();
 
@@ -77,6 +104,8 @@ void KoopaTroopa::Render()
 
 void KoopaTroopa::OnNoCollision(DWORD dt)
 {
+		
+	
 	x += vx * dt;
 	y += vy * dt;
 }
@@ -126,7 +155,7 @@ void KoopaTroopa::SetState(int state)
 	switch (state)
 	{
 	case TROOPA_STATE_DIE:
-		isRevie = true;
+		beforex = x;
 		die_start = GetTickCount64();
 		y += (TROOPA_BBOX_HEIGHT - TROOPA_BBOX_HEIGHT_DIE) / 2;
 		vx = 0;
@@ -136,7 +165,13 @@ void KoopaTroopa::SetState(int state)
 		head->ay = 0;
 		head->Setvx(0);
 		break;
+	case TROOPA_STATE_REVIE:
+	{	
+		vx = 0.3f;
+		break;
+	}
 	case TROOPA_STATE_WALKING:
+		
 		vx = -TROOPA_WALKING_SPEED;
 		break;
 	}

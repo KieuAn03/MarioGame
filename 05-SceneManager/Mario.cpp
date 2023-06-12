@@ -112,7 +112,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 	// jump on top >> kill Goomba and deflect a bit 
 	if (e->ny < 0)
 	{
-		if (troopa->GetState() != TROOPA_STATE_DIE)
+		if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE)
 		{
 			troopa->SetState(TROOPA_STATE_DIE);
 			vy = -MARIO_JUMP_DEFLECT_SPEED;
@@ -122,7 +122,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 	{
 		if (untouchable == 0)
 		{
-			if (troopa->GetState() != TROOPA_STATE_DIE)
+			if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE)
 			{
 				if (level > MARIO_LEVEL_SMALL)
 				{

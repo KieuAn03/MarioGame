@@ -9,14 +9,16 @@
 #define TROOPA_BBOX_HEIGHT 24
 #define TROOPA_BBOX_HEIGHT_DIE 16
 
-#define TROOPA_DIE_TIMEOUT 600
-
+#define TROOPA_DIE_TIMEOUT 100
+#define TROOPA_REVIE_TIMEOUT 10000
 #define TROOPA_STATE_WALKING 100
 #define TROOPA_STATE_DIE 200
+#define TROOPA_STATE_REVIE 300
 
 #define ID_ANI_TROOPA_WALKINGL 5201
 #define ID_ANI_TROOPA_DIE 5202
 #define ID_ANI_TROOPA_WALKINGR 5203
+#define ID_ANI_TROOPA_REVIE 5204
 class KoopaHead : public CGameObject
 {
 protected:
@@ -48,13 +50,13 @@ public:
 class KoopaTroopa : public CGameObject
 {
 protected:
-	int isRevie = 0;
-	float beforedeadvx;
+	float beforex;
 	int Direction;
 	float ax;
 	float ay;
 	KoopaHead *head;
 	ULONGLONG die_start;
+	ULONGLONG revie_start;
 	CGoomba* testobj;
 	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
 	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);
