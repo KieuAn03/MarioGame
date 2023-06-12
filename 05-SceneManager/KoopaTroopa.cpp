@@ -50,13 +50,22 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 	}
 	if ((state == TROOPA_STATE_DIE) && (GetTickCount64() - die_start <TROOPA_DIE_TIMEOUT)) {
 		CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
+		
 		if (followMario == true) {
+			ay = 0;
 			OutputDebugStringW(L"MARIO HAND SHELD.");
-			mario->GetPosition(this->x, this->y);
+			if (mario->direction == 1) {
+				mario->GetPosition(this->x, this->y);
+				this->x += 8;
+			}
+			else if (mario->direction == 0) {
+				mario->GetPosition(this->x, this->y);
+				this->x -= 8;
+			}
 			if (mario->handsth == false) {
 				followMario = false;
-		}
-
+				ay = TROOPA_GRAVITY;
+			}
 		}
 	}
 	
@@ -77,11 +86,19 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 		CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
 
 		if (followMario == true) {
-				
+				ay = 0;
 				OutputDebugStringW(L"MARIO HAND SHELD.");
-				mario->GetPosition(this->x, this->y);
+				if (mario->GetState() == MARIO_STATE_RUNNING_RIGHT) {
+					mario->GetPosition(this->x, this->y);
+					this->x += 8;
+				}
+				if (mario->GetState() == MARIO_STATE_RUNNING_LEFT) {
+					mario->GetPosition(this->x, this->y);
+					this->x -= 8;
+				}
 				if (mario->handsth == false) {
 					followMario = false;
+					ay = TROOPA_GRAVITY;
 				}
 		}
 		vx = -vx;

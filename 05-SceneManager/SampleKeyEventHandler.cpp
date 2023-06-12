@@ -62,15 +62,22 @@ void CSampleKeyHandler::KeyState(BYTE *states)
 
 	if (game->IsKeyDown(DIK_RIGHT))
 	{
+		mario->direction = 1;
 		if (game->IsKeyDown(DIK_A))
+		
 			mario->SetState(MARIO_STATE_RUNNING_RIGHT);
-		else
+		
+		else	
 			mario->SetState(MARIO_STATE_WALKING_RIGHT);
 	}
 	else if (game->IsKeyDown(DIK_LEFT))
 	{
+		mario->direction = 0;
 		if (game->IsKeyDown(DIK_A))
+		
 			mario->SetState(MARIO_STATE_RUNNING_LEFT);
+		
+			
 		else
 			mario->SetState(MARIO_STATE_WALKING_LEFT);
 	}

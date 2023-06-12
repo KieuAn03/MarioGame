@@ -123,6 +123,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 	}
 	else // hit by Goomba
 	{
+		/*
 		if (untouchable == 0)
 		{
 			if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE)
@@ -139,6 +140,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 				}
 			}
 		}
+		*/
 		if (troopa->GetState() == TROOPA_STATE_DIE || troopa->GetState() == TROOPA_STATE_REVIE) {
 			OutputDebugStringW(L"MARIO TOUCH\n");
 

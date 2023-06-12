@@ -123,6 +123,7 @@ class CMario : public CGameObject
 	int GetAniIdSmall();
 
 public:
+	int direction;
 	bool handsth = false;
 	CMario(float x, float y) : CGameObject(x, y)
 	{
