@@ -1,4 +1,9 @@
 #include "KoopaTroopa.h"
+#include "Mario.h"
+#include "PlayScene.h"
+
+
+
 void KoopaTroopa::GetBoundingBox(float& left, float& top, float& right, float& bottom)
 {
 
@@ -43,11 +48,23 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 
 		}
 	}
+	if ((state == TROOPA_STATE_DIE) && (GetTickCount64() - die_start <TROOPA_DIE_TIMEOUT)) {
+		CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
+		if (followMario == true) {
+			OutputDebugStringW(L"MARIO HAND SHELD.");
+			mario->GetPosition(this->x, this->y);
+			if (mario->handsth == false) {
+				followMario = false;
+		}
+
+		}
+	}
 	
 	if ((state == TROOPA_STATE_DIE) && (GetTickCount64() - die_start > TROOPA_DIE_TIMEOUT))
 	{
+		CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
+
 		
-			
 		revie_start = GetTickCount64();
 		vx = 0.06f;
 		state = TROOPA_STATE_REVIE;
@@ -55,14 +72,23 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 	}
 
 	if ((state == TROOPA_STATE_REVIE))
+
 	{
+		CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
+
+		if (followMario == true) {
+				
+				OutputDebugStringW(L"MARIO HAND SHELD.");
+				mario->GetPosition(this->x, this->y);
+				if (mario->handsth == false) {
+					followMario = false;
+				}
+		}
 		vx = -vx;
-		OutputDebugStringW(L"ENTER REVIE STATE.");
 
 
 		if ((GetTickCount64() - revie_start >= TROOPA_REVIE_TIMEOUT)) {
 
-			OutputDebugStringW(L"LEAVE REVIE STATE.");
 			y = head->GetOy();
 			this->ay = TROOPA_GRAVITY;
 			this->head->ay = TROOPA_GRAVITY;
@@ -78,6 +104,7 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 			die_start = -1;
 			revie_start = -1;
 			state = TROOPA_STATE_WALKING;
+			followMario = false;
 		}
 
 	}

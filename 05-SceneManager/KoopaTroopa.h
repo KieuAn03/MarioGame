@@ -7,10 +7,10 @@
 
 #define TROOPA_BBOX_WIDTH 16
 #define TROOPA_BBOX_HEIGHT 24
-#define TROOPA_BBOX_HEIGHT_DIE 16
+#define TROOPA_BBOX_HEIGHT_DIE 15
 
 #define TROOPA_DIE_TIMEOUT 6000
-#define TROOPA_REVIE_TIMEOUT 2000
+#define TROOPA_REVIE_TIMEOUT 20000
 #define TROOPA_STATE_WALKING 100
 #define TROOPA_STATE_DIE 200
 #define TROOPA_STATE_REVIE 300
@@ -50,6 +50,7 @@ public:
 class KoopaTroopa : public CGameObject
 {
 protected:
+	
 	float beforex;
 	int Direction;
 	float ax;
@@ -69,8 +70,9 @@ protected:
 	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
 
 public:
-	
+	bool followMario = false;
 	KoopaTroopa(float x, float y);
 	virtual void SetState(int state);
 };
+
 

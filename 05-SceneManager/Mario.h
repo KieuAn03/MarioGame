@@ -107,7 +107,7 @@ class CMario : public CGameObject
 	float maxVx;
 	float ax;				// acceleration on x 
 	float ay;				// acceleration on y 
-
+	
 	int level; 
 	int untouchable; 
 	ULONGLONG untouchable_start;
@@ -123,8 +123,10 @@ class CMario : public CGameObject
 	int GetAniIdSmall();
 
 public:
+	bool handsth = false;
 	CMario(float x, float y) : CGameObject(x, y)
 	{
+		
 		isSitting = false;
 		maxVx = 0.0f;
 		ax = 0.0f;

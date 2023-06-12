@@ -10,6 +10,7 @@
 #include "Portal.h"
 
 #include "Collision.h"
+#include "SampleKeyEventHandler.h"
 
 void CMario::Update(DWORD dt, vector<LPGAMEOBJECT> *coObjects)
 {
@@ -109,7 +110,8 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 {	
 	KoopaTroopa* troopa = dynamic_cast<KoopaTroopa*>(e->obj);
 
-	// jump on top >> kill Goomba and deflect a bit 
+
+
 	if (e->ny < 0)
 	{
 		if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE)
@@ -117,6 +119,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 			troopa->SetState(TROOPA_STATE_DIE);
 			vy = -MARIO_JUMP_DEFLECT_SPEED;
 		}
+		
 	}
 	else // hit by Goomba
 	{
@@ -134,6 +137,16 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 					DebugOut(L">>> Mario DIE >>> \n");
 					SetState(MARIO_STATE_DIE);
 				}
+			}
+		}
+		if (troopa->GetState() == TROOPA_STATE_DIE || troopa->GetState() == TROOPA_STATE_REVIE) {
+			OutputDebugStringW(L"MARIO TOUCH\n");
+
+			if (this->GetState() == MARIO_STATE_RUNNING_RIGHT || this->GetState() == MARIO_STATE_RUNNING_LEFT) {
+				OutputDebugStringW(L"MY CODE WAS RIGHT\n");
+				troopa->followMario = true;
+				this->handsth = true;
+
 			}
 		}
 	}
