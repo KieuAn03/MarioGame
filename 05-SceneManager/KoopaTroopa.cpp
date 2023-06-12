@@ -66,8 +66,15 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 			y = head->GetOy();
 			this->ay = TROOPA_GRAVITY;
 			this->head->ay = TROOPA_GRAVITY;
-			vx = -TROOPA_WALKING_SPEED;
-			this->head->Setvx(-TROOPA_WALKING_SPEED);
+			if (Direction == ID_ANI_TROOPA_WALKINGL) {
+				vx = -TROOPA_WALKING_SPEED;
+				this->head->Setvx(-TROOPA_WALKING_SPEED);
+			}
+			else {
+				vx = TROOPA_WALKING_SPEED;
+				this->head->Setvx(TROOPA_WALKING_SPEED);
+			}
+			
 			die_start = -1;
 			revie_start = -1;
 			state = TROOPA_STATE_WALKING;
@@ -94,7 +101,7 @@ void KoopaTroopa::Render()
 		aniId = ID_ANI_TROOPA_DIE;
 	}
 	if (state == TROOPA_STATE_REVIE) {
-		aniId = ID_ANI_TROOPA_DIE;
+		aniId = ID_ANI_TROOPA_REVIE;
 	}
 	CAnimations::GetInstance()->Get(aniId)->Render(x, y);
 	RenderBoundingBox();
@@ -112,6 +119,9 @@ void KoopaTroopa::OnNoCollision(DWORD dt)
 
 void KoopaTroopa::OnCollisionWith(LPCOLLISIONEVENT e)
 {
+	if (state == TROOPA_STATE_DIE || state == TROOPA_STATE_REVIE) {
+		return;
+	}
 	if (!e->obj->IsBlocking()) return;
 	if (dynamic_cast<KoopaTroopa*>(e->obj)) return;
 
