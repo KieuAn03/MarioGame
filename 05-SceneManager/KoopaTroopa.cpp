@@ -95,14 +95,17 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 			if (Direction == ID_ANI_TROOPA_WALKINGL) {
 				vx = -TROOPA_WALKING_SPEED;
 				this->head->Setvx(-TROOPA_WALKING_SPEED);
+				head->Setx(this->x - 16);
 			}
 			else {
 				vx = TROOPA_WALKING_SPEED;
 				this->head->Setvx(TROOPA_WALKING_SPEED);
+				head->Setx(this->x + 16);
 			}
 			
 			die_start = -1;
 			revie_start = -1;
+			
 			state = TROOPA_STATE_WALKING;
 			followMario = false;
 		}
@@ -251,6 +254,11 @@ void KoopaHead::OnCollisionWith(LPCOLLISIONEVENT e)
 void KoopaHead::Setvx(float vx)
 {
 	this->vx = vx;
+}
+
+void KoopaHead::Setx(float x)
+{
+	this->x = x;
 }
 
 float KoopaHead::GetOy()

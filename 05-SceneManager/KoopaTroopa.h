@@ -10,7 +10,7 @@
 #define TROOPA_BBOX_HEIGHT_DIE 15
 
 #define TROOPA_DIE_TIMEOUT 6000
-#define TROOPA_REVIE_TIMEOUT 20000
+#define TROOPA_REVIE_TIMEOUT 2000
 #define TROOPA_STATE_WALKING 100
 #define TROOPA_STATE_DIE 200
 #define TROOPA_STATE_REVIE 300
@@ -43,6 +43,7 @@ public:
 	KoopaHead(float x, float y);
 	virtual void SetState(int state);
 	virtual void Setvx(float vx);
+	virtual void Setx(float x);
 	virtual float GetOy();
 	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);
 };
