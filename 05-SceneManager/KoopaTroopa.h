@@ -14,11 +14,13 @@
 #define TROOPA_STATE_WALKING 100
 #define TROOPA_STATE_DIE 200
 #define TROOPA_STATE_REVIE 300
+#define TROOPA_STATE_SPINNING 400
 
 #define ID_ANI_TROOPA_WALKINGL 5201
 #define ID_ANI_TROOPA_DIE 5202
 #define ID_ANI_TROOPA_WALKINGR 5203
 #define ID_ANI_TROOPA_REVIE 5204
+#define ID_ANI_TROOPA_SPINNING 5205
 class KoopaHead : public CGameObject
 {
 protected:
@@ -63,7 +65,7 @@ protected:
 	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
 	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);
 	virtual void Render();
-
+	void OnCollisionWithGoomba(LPCOLLISIONEVENT e);
 	virtual int IsCollidable() { return 1; };
 	virtual int IsBlocking() { return 0; }
 	virtual void OnNoCollision(DWORD dt);
