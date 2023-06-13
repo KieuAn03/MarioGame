@@ -74,25 +74,6 @@ int CCloundSmile::IsDirectionColliable(float nx, float ny)
 	return 1;
 }
 
-void CMysBox::Render()
-{
-	CAnimations* animations = CAnimations::GetInstance();
-	animations->Get(ID_ANI_MYSBOX)->Render(x, y);
-}
-
-void CMysBox::GetBoundingBox(float& l, float& t, float& r, float& b)
-{
-	l = x - CLOUNDSMILE_BBOX_WIDTH / 2;
-	t = y - CLOUNDSMILE_BBOX_HEIGHT / 2;
-	r = l + CLOUNDSMILE_BBOX_WIDTH;
-	b = t + CLOUNDSMILE_BBOX_HEIGHT;
-}
-
-int CMysBox::IsDirectionColliable(float nx, float ny)
-{
-	return 1;
-}
-
 void CTopPipL::Render()
 {
 	CAnimations* animations = CAnimations::GetInstance();
@@ -328,7 +309,6 @@ void CTopShapeR::Render()
 	CAnimations* animations = CAnimations::GetInstance();
 	animations->Get(ID_ANI_TOPSHAPE0R)->Render(x, y);
 }
-
 
 void CTopShapeR::GetBoundingBox(float& l, float& t, float& r, float& b)
 {
@@ -1120,3 +1100,4 @@ int CGrassMid::IsDirectionColliable(float nx, float ny)
 {
 	return 0;
 }
+

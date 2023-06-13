@@ -10,6 +10,7 @@
 #include "Coin.h"
 #include "Platform.h"
 #include "KoopaTroopa.h"
+#include "Mysbox.h"
 #include "SampleKeyEventHandler.h"
 
 using namespace std;

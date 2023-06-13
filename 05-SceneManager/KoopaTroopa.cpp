@@ -232,7 +232,7 @@ KoopaTroopa::KoopaTroopa(float x, float y)
 	this->ay = TROOPA_GRAVITY;
 	die_start = -1;
 	SetState(TROOPA_STATE_WALKING);
-	this->head = new KoopaHead(10,172 );
+	this->head = new KoopaHead(10,172);
 	this->head->Render();
 	this->head->SetPosition(x-16,y);
 }
