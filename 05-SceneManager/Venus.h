@@ -1,7 +1,6 @@
 #pragma once
 #pragma once
 #include "GameObject.h"
-
 #define VENUS_GRAVITY 0.002f
 #define VENUS_WALKING_SPEED 0.05f
 
@@ -16,12 +15,41 @@
 #define VENUS_STATE_IDLE 99
 #define VENUS_STATE_GROW 100
 #define VENUS_STATE_FIRE 101
+#define VENUS_STATE_SHRINK 102
 #define VENUS_STATE_DIE 200
+
 
 #define ID_ANI_VENUS_GROW 5301
 #define ID_ANI_VENUS_DIE 5001
+#define ID_ANI_FIRE_BALL 5306
 
 
+class CBOOM : public CGameObject
+{
+protected:
+	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
+	int IsDirectionColliable(float nx, float ny);
+	virtual int IsCollidable() { return 0; };
+	virtual int IsBlocking() { return 0; }
+	virtual void OnNoCollision(DWORD dt);
+	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
+
+public:
+	float genx = 111;
+	float geny = 111;
+	float Mx=-1;
+	float My=-1;
+	float ax;
+	float ay;
+	virtual void Render();
+	CBOOM(float x, float y);
+	virtual void SetState(int state);
+	virtual void Setvx(float vx);
+	virtual void Setx(float x);
+	virtual float GetOx() { return this->x; };
+	virtual float GetOy() { return this->y; };
+	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);
+};
 
 class CVenusR : public CGameObject
 {
@@ -31,11 +59,11 @@ protected:
 	float fullGrowOy;
 	float startOy;
 	ULONGLONG die_start;
-
+	CBOOM* boom;
 	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
 	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);
 	virtual void Render();
-	virtual int IsCollidable() { return 1; };
+	virtual int IsCollidable() { return 0; };
 	virtual int IsBlocking() { return 0; }
 	virtual void OnNoCollision(DWORD dt);
 	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
