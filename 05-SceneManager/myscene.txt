@@ -7,11 +7,14 @@ brick.txt
 goomba.txt
 clound.txt
 Troopa.txt
+plant.txt
 #
 [OBJECTS]
 # type	x	y	extra_settings per object type
 # type: 0 = Mario , 1 = Brick, 2 = Goomba, 3 = Koopas, 4 = coin
 # See OBJECT_TYPE constants in AssetIDs.h
+#VENUS
+11	360	114
 #Brick
 1	1952	178
 1	1968	178

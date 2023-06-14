@@ -11,7 +11,9 @@
 #include "Platform.h"
 #include "KoopaTroopa.h"
 #include "Mysbox.h"
+#include "Venus.h"
 #include "SampleKeyEventHandler.h"
+
 
 using namespace std;
 
@@ -125,7 +127,7 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_CLOUNDSMILE: obj = new CCloundSmile(x, y); break;
 	case OBJECT_TYPE_MYSBOX: obj = new CMysBox(x, y); break;
 	case OBJECT_TYPE_TROOPA: obj = new KoopaTroopa(x, y); break;
-
+	case OBJECT_TYPE_VENUSRED: obj = new CVenusR(x, y); break;
 	case OBJECT_TYPE_TOPPIPL: obj = new CTopPipL(x, y); break;
 	case OBJECT_TYPE_TOPPIPR: obj = new CTopPipR(x, y); break;
 	case OBJECT_TYPE_BOTPIPL: obj = new CBotPipL(x, y); break;
