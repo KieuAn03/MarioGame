@@ -111,8 +111,6 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 {	
 	KoopaTroopa* troopa = dynamic_cast<KoopaTroopa*>(e->obj);
 
-
-
 	if (e->ny < 0)
 	{
 		if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE)

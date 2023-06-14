@@ -7,7 +7,11 @@ void CMysBox::Render()
 	top->Render();
 	bot->Render();
 	CAnimations* animations = CAnimations::GetInstance();
-	animations->Get(ID_ANI_MYSBOX)->Render(x, y);
+	int aniId = ID_ANI_MYSBOX;
+	if (state == BOX_STATE_DEAD) {
+		aniId = ID_ANI_MYSBOX_DEAD;
+	}
+	animations->Get(aniId)->Render(x, y);
 	RenderBoundingBox();
 	
 }
@@ -44,12 +48,16 @@ void CMysBox::OnCollisionWith(LPCOLLISIONEVENT e)
 		if (dynamic_cast<CMysBox*>(e->obj)) { return; }
 		vy = -0.4f;
 		SetState(BOX_STATE_DEAD);
+		this->colliable = 0;
+		SetIsColliable(1);
+		
 	}
 	
 }
 
 CMysBox::CMysBox(float x, float y)
 {
+	
 	this->bot = new MysBoxBot(x, y + 16);
 	this->bot->SetPosition(x, y + 17);
 	this->top = new MysBoxTop(x, y - 28);
@@ -58,7 +66,7 @@ CMysBox::CMysBox(float x, float y)
 	this->ay = 0.001f;
 	die_start = -1;
 	SetState(BOX_STATE_ALIVE);
-
+	this->startoy = this->y;
 	
 	
 
@@ -79,9 +87,12 @@ void CMysBox::SetState(int state)
 }
 
 
-int CMysBox::IsDirectionColliable(float nx, float ny)
+
+int CMysBox::IsCollidable()
 {
-	return 1;
+	
+	return this->colliable;
+
 }
 
 void CMysBox::GetBoundingBox(float& l, float& t, float& r, float& b)
@@ -131,9 +142,18 @@ void MysBoxBot::OnCollisionWith(LPCOLLISIONEVENT e)
 	if (dynamic_cast<CMysBox*>(e->obj)) {
 		OutputDebugStringW(L"MYSBOX BOTT COLLISON.");
 		CMysBox* mysbox = dynamic_cast<CMysBox*>(e->obj);
+		if (mysbox->GetState() == BOX_STATE_DEAD) {
+			mysbox->SetOy(this->y -16);
+			mysbox->SetSpeed(0, 0);
+			mysbox->SetA(0, 0);
+			return;
+		}
+
 		mysbox->SetSpeed(0, 0);
 		mysbox->SetA(0, 0);
+		
 	}
+
 
 }
 
@@ -206,7 +226,6 @@ void MysBoxTop::OnCollisionWith(LPCOLLISIONEVENT e)
 void MysBoxTop::Render()
 {
 	RenderBoundingBox();
-
 }
 
 MysBoxTop::MysBoxTop(float x, float y)

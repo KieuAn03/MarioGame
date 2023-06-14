@@ -7,6 +7,7 @@
 #define CLOUNDSMILE_BBOX_WIDTH 13
 #define CLOUNDSMILE_BBOX_HEIGHT 16
 #define ID_ANI_MYSBOX 4200
+#define ID_ANI_MYSBOX_DEAD 4201
 
 #define BOX_STATE_ALIVE 100
 #define BOX_STATE_DEAD 101
@@ -17,7 +18,7 @@ protected:
 	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
 	int IsDirectionColliable(float nx, float ny);
 	virtual int IsCollidable() { return 1 ; };
-	virtual int IsBlocking() { return 0; }
+	virtual int IsBlocking() { return 1; }
 	virtual void OnNoCollision(DWORD dt);
 	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
 
@@ -64,8 +65,9 @@ protected:
 	ULONGLONG die_start;
 	ULONGLONG revie_start;
 	
-	int IsDirectionColliable(float nx, float ny);
-	virtual int IsCollidable() { return 1; };
+	//int IsDirectionColliable(float nx, float ny);
+	virtual int IsCollidable(); 
+	virtual int IsBlocking(int yes=0) { return 1; }
 	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
 	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);
 	virtual void Render();
@@ -73,11 +75,16 @@ protected:
 	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
 
 public:
+
+	float startoy;
+	int colliable = 1;
 	bool followMario = false;
 	CMysBox(float x, float y);
 	virtual void SetState(int state);
 	virtual void SetA(float ax, float ay) { this->ax = ax; this->ay = ay; };
-	virtual void SetIsColliable(int x) { IsCollidable(); };
+	virtual void SetIsColliable(int x) { IsBlocking(x); };
+	virtual void SetOy(float oy) { this->y = oy; };
+	virtual float GetOy() { return this->y; };
 
 
 
