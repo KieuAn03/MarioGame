@@ -8,6 +8,7 @@
 #include "KoopaTroopa.h"
 #include "Coin.h"
 #include "Portal.h"
+#include "Venus.h"
 
 #include "Collision.h"
 #include "SampleKeyEventHandler.h"
@@ -58,11 +59,14 @@ void CMario::OnCollisionWith(LPCOLLISIONEVENT e)
 		OnCollisionWithPortal(e);
 	else if (dynamic_cast<KoopaTroopa*> (e->obj))
 		OnCollisionWithTroopa(e);
+	else if (dynamic_cast<CBOOM*> (e->obj))
+		OnCollisionWithFireBall(e);
 
 }
 
 void CMario::OnCollisionWithGoomba(LPCOLLISIONEVENT e)
 {
+
 	CGoomba* goomba = dynamic_cast<CGoomba*>(e->obj);
 
 	// jump on top >> kill Goomba and deflect a bit 
@@ -151,6 +155,11 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 			}
 		}
 	}
+}
+
+void CMario::OnCollisionWithFireBall(LPCOLLISIONEVENT e)
+{
+
 }
 
 //

@@ -16,9 +16,28 @@ float distance(CMario* mario, float x, float y)
 	return sqrt(pow(Mx - x, 2) + pow(My - y, 2));
 }
 void CVenusR::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
+
 {
+	
 	CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
 	
+	if (boom != nullptr) {
+		if (boom->IsDeleted() == 1) {
+			boom = nullptr;
+			if (mario->GetLevel() > MARIO_LEVEL_SMALL)
+			{
+				mario->SetLevel(MARIO_LEVEL_SMALL);
+				mario->StartUntouchable();
+			}
+			else
+			{
+				DebugOut(L">>> Mario DIE >>> \n");
+				mario->SetState(MARIO_STATE_DIE);
+			}
+		}
+
+
+	}
 	if (distance(mario, this->x, this->y) <200) {
 		if(GetState() ==VENUS_STATE_IDLE)
 			SetState(VENUS_STATE_GROW);
@@ -130,7 +149,7 @@ void CBOOM::GetBoundingBox(float& left, float& top, float& right, float& bottom)
 
 int CBOOM::IsDirectionColliable(float nx, float ny)
 {
-	return 0;
+	return 1;
 }
 
 void CBOOM::OnNoCollision(DWORD dt)
@@ -150,6 +169,12 @@ void CBOOM::OnNoCollision(DWORD dt)
 
 void CBOOM::OnCollisionWith(LPCOLLISIONEVENT e)
 {
+	if (dynamic_cast<CMario*>(e->obj)) {
+		OutputDebugStringW(L"MARIO GOT HIT\n");
+		this->isDeleted = 1;
+
+
+	}
 }
 
 void CBOOM::Render()
