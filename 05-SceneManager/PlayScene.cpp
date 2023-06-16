@@ -12,6 +12,7 @@
 #include "KoopaTroopa.h"
 #include "Mysbox.h"
 #include "Venus.h"
+#include "eatplant.h"
 #include "SampleKeyEventHandler.h"
 
 
@@ -132,7 +133,7 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_TOPPIPR: obj = new CTopPipR(x, y); break;
 	case OBJECT_TYPE_BOTPIPL: obj = new CBotPipL(x, y); break;
 	case OBJECT_TYPE_BOTPIPR: obj = new CBotPipR(x, y); break;
-
+	case OBJECT_TYPE_PLANT: obj = new CEatPlant(x, y); break;
 
 	case OBJECT_TYPE_TOPCLOUNDL:obj = new CTopCloundL(x, y); break;
 	case OBJECT_TYPE_TOPCLOUNDM:obj = new CTopCloundM(x, y); break;
