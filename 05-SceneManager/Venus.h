@@ -22,6 +22,7 @@
 #define ID_ANI_VENUS_GROW 5301
 #define ID_ANI_VENUS_DIE 5001
 #define ID_ANI_FIRE_BALL 5306
+#define ID_ANI_VENUSG_GROW 5315
 
 
 class CBOOM : public CGameObject
@@ -69,6 +70,29 @@ protected:
 
 public:
 	CVenusR(float x, float y);
+	virtual void SetState(int state);
+};
+
+
+class CVenusG : public CGameObject
+{
+protected:
+	float ax;
+	float ay;
+	float fullGrowOy;
+	float startOy;
+	ULONGLONG die_start;
+	CBOOM* boom;
+	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);
+	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects);
+	virtual void Render();
+	virtual int IsCollidable() { return 0; };
+	virtual int IsBlocking() { return 0; }
+	virtual void OnNoCollision(DWORD dt);
+	virtual void OnCollisionWith(LPCOLLISIONEVENT e);
+
+public:
+	CVenusG(float x, float y);
 	virtual void SetState(int state);
 };
 

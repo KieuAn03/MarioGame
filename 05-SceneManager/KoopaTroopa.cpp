@@ -81,8 +81,6 @@ void KoopaTroopa::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 	if ((state == TROOPA_STATE_DIE) && (GetTickCount64() - die_start > TROOPA_DIE_TIMEOUT))
 	{
 		CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
-
-		
 		revie_start = GetTickCount64();
 		vx = 0.06f;
 		SetState(TROOPA_STATE_REVIE);
@@ -190,7 +188,14 @@ void KoopaTroopa::OnNoCollision(DWORD dt)
 
 void KoopaTroopa::OnCollisionWith(LPCOLLISIONEVENT e)
 {
-	
+	if (dynamic_cast<CMario*>(e->obj)) {
+		if (GetState() == TROOPA_STATE_REVIE || GetState() == TROOPA_STATE_DIE)
+			SetState(TROOPA_STATE_SPINNING);
+
+	}
+
+
+
 	if (dynamic_cast<KoopaTroopa*>(e->obj)) return;
 	if (dynamic_cast<CGoomba*>(e->obj)) {
 		if (state == TROOPA_STATE_SPINNING) {
@@ -266,7 +271,14 @@ void KoopaTroopa::SetState(int state)
 		die_start = -1;
 		revie_start = -1;
 		ay = GOOMBA_GRAVITY;
-		vx = -0.4f;
+		CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
+		if (mario->GetState() == MARIO_STATE_WALKING_RIGHT || MARIO_STATE_RUNNING_RIGHT) {
+			vx = 0.4f;
+		}
+		else {
+			vx = -0.4f;
+		}
+		
 		head->Delete();
 		head = nullptr;
 		break;

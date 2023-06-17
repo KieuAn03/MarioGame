@@ -39,20 +39,27 @@ void CMysBox::OnCollisionWith(LPCOLLISIONEVENT e)
 	}
 	if (dynamic_cast<MysBoxBot*>(e->obj)) return;
 	OutputDebugStringW(L"MYSBOX COLLISON.");
-	if (state == BOX_STATE_ALIVE) {
-		if (dynamic_cast<CMario*>(e->obj)) {
-			CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
-			mario->SetVy(-0.1f);
+	if (e->ny <0) {
 
+		if (dynamic_cast<CMario*>(e->obj)) {
+
+
+			if (state == BOX_STATE_ALIVE) {
+				if (dynamic_cast<CMario*>(e->obj)) {
+					CMario* mario = (CMario*)((LPPLAYSCENE)CGame::GetInstance()->GetCurrentScene())->GetPlayer();
+					mario->SetVy(-0.1f);
+
+				}
+				if (dynamic_cast<CMysBox*>(e->obj)) { return; }
+				vy = -0.4f;
+				SetState(BOX_STATE_DEAD);
+				this->colliable = 0;
+				SetIsColliable(1);
+
+			}
 		}
-		if (dynamic_cast<CMysBox*>(e->obj)) { return; }
-		vy = -0.4f;
-		SetState(BOX_STATE_DEAD);
-		this->colliable = 0;
-		SetIsColliable(1);
-		
-	}
 	
+	}
 }
 
 CMysBox::CMysBox(float x, float y)

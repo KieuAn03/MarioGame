@@ -9,7 +9,7 @@
 #include "Coin.h"
 #include "Portal.h"
 #include "Venus.h"
-
+#include "eatplant.h"
 #include "Collision.h"
 #include "SampleKeyEventHandler.h"
 
@@ -59,8 +59,9 @@ void CMario::OnCollisionWith(LPCOLLISIONEVENT e)
 		OnCollisionWithPortal(e);
 	else if (dynamic_cast<KoopaTroopa*> (e->obj))
 		OnCollisionWithTroopa(e);
-	else if (dynamic_cast<CBOOM*> (e->obj))
+	else if (dynamic_cast<CEatPlant*> (e->obj))
 		OnCollisionWithFireBall(e);
+	
 
 }
 
@@ -117,7 +118,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 
 	if (e->ny < 0)
 	{
-		if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE)
+		if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE && troopa->GetState() != TROOPA_STATE_SPINNING)
 		{
 			troopa->SetState(TROOPA_STATE_DIE);
 			vy = -MARIO_JUMP_DEFLECT_SPEED;
@@ -126,7 +127,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 	}
 	else // hit by Goomba
 	{
-		/*
+		
 		if (untouchable == 0)
 		{
 			if (troopa->GetState() != TROOPA_STATE_DIE && troopa->GetState() != TROOPA_STATE_REVIE)
@@ -143,7 +144,7 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 				}
 			}
 		}
-		*/
+		
 		if (troopa->GetState() == TROOPA_STATE_DIE || troopa->GetState() == TROOPA_STATE_REVIE) {
 			OutputDebugStringW(L"MARIO TOUCH\n");
 
@@ -159,6 +160,21 @@ void CMario::OnCollisionWithTroopa(LPCOLLISIONEVENT e)
 
 void CMario::OnCollisionWithFireBall(LPCOLLISIONEVENT e)
 {
+	if (untouchable == 0)
+	{
+		
+			if (level > MARIO_LEVEL_SMALL)
+			{
+				level = MARIO_LEVEL_SMALL;
+				StartUntouchable();
+			}
+			else
+			{
+				DebugOut(L">>> Mario DIE >>> \n");
+				SetState(MARIO_STATE_DIE);
+			}
+	
+	}
 
 }
 

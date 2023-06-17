@@ -60,6 +60,11 @@ void CEatPlant::Render()
 	RenderBoundingBox();
 }
 
+int CEatPlant::IsDirectionColliable(float nx, float ny)
+{
+	return 1;
+}
+
 void CEatPlant::OnNoCollision(DWORD dt)
 {
 	x += vx * dt;
@@ -68,6 +73,7 @@ void CEatPlant::OnNoCollision(DWORD dt)
 
 void CEatPlant::OnCollisionWith(LPCOLLISIONEVENT e)
 {
+
 }
 
 CEatPlant::CEatPlant(float x, float y)

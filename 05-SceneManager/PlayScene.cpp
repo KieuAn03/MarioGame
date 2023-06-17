@@ -134,7 +134,7 @@ void CPlayScene::_ParseSection_OBJECTS(string line)
 	case OBJECT_TYPE_BOTPIPL: obj = new CBotPipL(x, y); break;
 	case OBJECT_TYPE_BOTPIPR: obj = new CBotPipR(x, y); break;
 	case OBJECT_TYPE_PLANT: obj = new CEatPlant(x, y); break;
-
+	case OBJECT_TYPE_VENUSGREEN: obj = new CVenusG(x, y); break;
 	case OBJECT_TYPE_TOPCLOUNDL:obj = new CTopCloundL(x, y); break;
 	case OBJECT_TYPE_TOPCLOUNDM:obj = new CTopCloundM(x, y); break;
 	case OBJECT_TYPE_TOPCLOUNDR:obj = new CTopCloundR(x, y); break;
